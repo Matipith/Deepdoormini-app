@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App - Gamee Style</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mini Game App</h1>
+        <div class="button-container">
+            <button onclick="startGame()">Start Game</button>
+            <button onclick="showLeaderboard()">Leaderboard</button>
+            <button onclick="showHelp()">Help</button>
+        </div>
+        <div id="output" class="output"></div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            Telegram.WebApp.init();
+        });
+
+        function startGame() {
+            document.getElementById('output').innerHTML = 'Game started! Choose your move:';
+            // افزودن منطق بازی در اینجا
+        }
+
+        function showLeaderboard() {
+            document.getElementById('output').innerHTML = 'Leaderboard:\n1. Player1 - 100 pts\n2. Player2 - 80 pts\n3. Player3 - 60 pts';
+        }
+
+        function showHelp() {
+            document.getElementById('output').innerHTML = 'Help:\n- Use "Start Game" to start a game.\n- Use "Leaderboard" to view the top players.\n- Use "Help" to get this message.';
+        }
+    </script>
+    <script async src="https://telegram.org/js/telegram-web-app.js"></script>
+</body>
+</html>
